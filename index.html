@@ -113,7 +113,7 @@
     let today=new Date();
     let dayNumber=today.getDay();
     
-    if (1<=dayNumber<=5) {
+    if (1<=dayNumber && dayNumber<=5) {
         let rows=document.querySelectorAll("table tr");
         rows.forEach (function(row) {
             let cell=row.children[dayNumber];
