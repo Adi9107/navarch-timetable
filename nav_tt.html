@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <style>
+        h1 {
+            text-align: center;
+            color:#b03a2e;
+        }
+        body {
+          font-family : Arial , sans-serif;
+          background-color:whitesmoke;  
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            color: aliceblue;
+        }
+        th,td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #b03a2e;
+            color: white;
+        }
+        td {
+            background-color: #ed5f52b6;
+            color: white;
+        }
+    </style>
+    <title> Nav'29_timetable page </title>
+</head>
+<body>
+    <h1> NAVARCH'29 TIMETABLE </h1>
+    <table>
+        <table border="1">
+    <tr>
+    <th> TIME </th>
+    <th> MONDAY </th>
+    <th> TUESDAY </th>
+    <th> WEDNESDAY </th>
+    <th> THURSDAY </th>
+    <th> FRIDAY </th>
+</tr>
+<tr>
+    <td>8:00-8:50</td>
+    <td>MA2101 [LinAl]         </td>
+    <td>OE2044 [Hydrodynamics] </td>
+    <td>OE2015 [Circ. & instr.]</td>
+    <td>      NO CLASS         </td>
+    <td>      NO CLASS         </td>
+</tr>
+<tr>
+    <td>9:00-9:50</td>
+    <td>OE2044 [Hydrodynamics] </td>
+    <td>OE2015 [Circ. & instr.]</td>
+    <td>OE1011 [Struc. Mech.]  </td>
+    <td>      NO CLASS         </td>
+    <td>      NO CLASS         </td>
+</tr>
+<tr>
+    <td>10:00-10:50</td>
+    <td>OE2015 [Circ. & instr.]</td>
+    <td>OE1011 [Struc. Mech.]  </td>
+    <td>      NO CLASS         </td>
+    <td>      NO CLASS         </td>
+    <td>MA2101 [LinAl]         </td>
+</tr>
+<tr>
+    <td>11:00-11:50</td>
+    <td>OE1011 [Struc. Mech.]  </td>
+    <td>      NO CLASS         </td>
+    <td>      NO CLASS         </td>
+    <td>MA2101 [LinAl]         </td>
+    <td>OE2044 [Hydrodynamics] </td>
+</tr>
+<tr>
+    <td>12:00-13:00</td>
+    <td>LUNCH</td>
+    <td>LUNCH</td>
+    <td>LUNCH</td>
+    <td>LUNCH</td>
+    <td>LUNCH</td>
+</tr>
+<tr>
+    <td>13:00-13:50</td>
+    <td>NO CLASS</td>
+    <td>MA2101 [LinAl]</td>
+    <td>OE2044 [Hydrodynamics]</td>
+    <td>OE1011 [Struc. Mech.]</td>
+    <td>OE2015 [Circ. & instr.]</td>
+</tr>
+<tr>
+    <td>14:00-16:45</td>
+    <td>NO CLASS</td>
+    <td>OE2013 [Ship Drawing]</td>
+    <td>NO CLASS</td>
+    <td>NO CLASS</td>
+    <td>NO CLASS</td>
+</tr>
+<tr>
+    <td>17:00-17:50</td>
+    <td>NO CLASS</td>
+    <td>      NO CLASS         </td>
+    <td>      NO CLASS         </td>
+    <td>NO CLASS</td>
+    <td>NO CLASS</td>
+</tr>
+</table>
+<script>
+    let today=new Date();
+    let dayNumber=today.getDay();
+    
+    if (1<=dayNumber<=5) {
+        let rows=document.querySelectorAll("table tr");
+        rows.forEach (function(row) {
+            let cell=row.children[dayNumber];
+            if (cell) {
+                if (cell.tagName==="TH") {
+                    cell.style.backgroundColor="darkgoldenrod";
+                    cell.style.color="white";
+                } else {
+                    cell.style.backgroundColor="gold";
+                    cell.style.color="black";
+                }
+            }
+        });
+    }
+</script>
+</body>
+</html>
