@@ -2,6 +2,7 @@
 <html>
 <head>
     
+    /// css
     <style>
         h1 {
             text-align: center;
@@ -15,6 +16,9 @@
             border-collapse: collapse;
             width: 100%;
             color: aliceblue;
+        }
+        .lunch-row {
+            background-color: blue;
         }
         th,td {
             border: 1px solid #ccc;
@@ -30,12 +34,19 @@
             color: white;
         }
     </style>
+
+    /// pwa(progressive web app)
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icon-192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
     <title> Nav'29_timetable page </title>
 </head>
+
 <body>
     <h1> NAVARCH'29 TIMETABLE </h1>
-    <table>
-        <table border="1">
+    <table border="1">
+
     <tr>
     <th> TIME </th>
     <th> MONDAY </th>
@@ -45,70 +56,91 @@
     <th> FRIDAY </th>
 </tr>
 <tr>
-    <td>8:00-8:50</td>
-    <td>MA2101 [LinAl]         </td>
-    <td>OE2044 [Hydrodynamics] </td>
-    <td>OE2015 [Circ. & instr.]</td>
-    <td>      NO CLASS         </td>
-    <td>      NO CLASS         </td>
+    <td>8:00-8:50 (Slot-1)</td>
+    <td data-day="Monday" data-slot="1">MA2101 [LinAl]         </td>
+    <td data-day="Tuesday" data-slot="1">OE2044 [Hydrodynamics] </td>
+    <td data-day="Wednesday" data-slot="1">OE2015 [Circ. & instr.]</td>
+    <td data-day="Thursday" data-slot="1">      ---         </td>
+    <td data-day="Friday" data-slot="1">      ---         </td>
 </tr>
 <tr>
-    <td>9:00-9:50</td>
-    <td>OE2044 [Hydrodynamics] </td>
-    <td>OE2015 [Circ. & instr.]</td>
-    <td>OE1011 [Struc. Mech.]  </td>
-    <td>      NO CLASS         </td>
-    <td>      NO CLASS         </td>
+    <td>9:00-9:50 (Slot-2)</td>
+    <td data-day="Monday" data-slot="2">OE2044 [Hydrodynamics] </td>
+    <td data-day="Tuesday" data-slot="2">OE2015 [Circ. & instr.]</td>
+    <td data-day="Wednesday" data-slot="2">OE1011 [Struc. Mech.]  </td>
+    <td data-day="Thursday" data-slot="2">      ---         </td>
+    <td data-day="Friday" data-slot="2">      ---         </td>
 </tr>
 <tr>
-    <td>10:00-10:50</td>
-    <td>OE2015 [Circ. & instr.]</td>
-    <td>OE1011 [Struc. Mech.]  </td>
-    <td>      NO CLASS         </td>
-    <td>      NO CLASS         </td>
-    <td>MA2101 [LinAl]         </td>
+    <td>10:00-10:50 (Slot-3)</td>
+    <td data-day="Monday" data-slot="3">OE2015 [Circ. & instr.]</td>
+    <td data-day="Tuesday" data-slot="3">OE1011 [Struc. Mech.]  </td>
+    <td data-day="Wednesday" data-slot="3">      ---         </td>
+    <td data-day="Thursday" data-slot="3">      ---         </td>
+    <td data-day="Friday" data-slot="3">MA2101 [LinAl]         </td>
 </tr>
 <tr>
-    <td>11:00-11:50</td>
-    <td>OE1011 [Struc. Mech.]  </td>
-    <td>      NO CLASS         </td>
-    <td>      NO CLASS         </td>
-    <td>MA2101 [LinAl]         </td>
-    <td>OE2044 [Hydrodynamics] </td>
+    <td>11:00-11:50 (Slot-4)</td>
+    <td data-day="Monday" data-slot="4">OE1011 [Struc. Mech.]  </td>
+    <td data-day="Tuesday" data-slot="4">      ---         </td>
+    <td data-day="Wednesday" data-slot="4">      ---         </td>
+    <td data-day="Thursday" data-slot="4">MA2101 [LinAl]         </td>
+    <td data-day="Friday" data-slot="4">OE2044 [Hydrodynamics] </td>
+</tr>
+<tr class="lunch-row">
+    <td>12:00-13:00 (Slot-5)</td>
+    <td data-day="Monday" data-slot="5">LUNCH</td>
+    <td data-day="Tuesday" data-slot="5">LUNCH</td>
+    <td data-day="Wednesday" data-slot="5">LUNCH</td>
+    <td data-day="Thursday" data-slot="5">LUNCH</td>
+    <td data-day="Friday" data-slot="5">LUNCH</td>
 </tr>
 <tr>
-    <td>12:00-13:00</td>
-    <td>LUNCH</td>
-    <td>LUNCH</td>
-    <td>LUNCH</td>
-    <td>LUNCH</td>
-    <td>LUNCH</td>
+    <td>13:00-13:50 (Slot-6)</td>
+    <td data-day="Monday" data-slot="6">---</td>
+    <td data-day="Tuesday" data-slot="6">MA2101 [LinAl]</td>
+    <td data-day="Wednesday" data-slot="6">OE2044 [Hydrodynamics]</td>
+    <td data-day="Thursday" data-slot="6">OE1011 [Struc. Mech.]</td>
+    <td data-day="Friday" data-slot="6">OE2015 [Circ. & instr.]</td>
 </tr>
 <tr>
-    <td>13:00-13:50</td>
-    <td>NO CLASS</td>
-    <td>MA2101 [LinAl]</td>
-    <td>OE2044 [Hydrodynamics]</td>
-    <td>OE1011 [Struc. Mech.]</td>
-    <td>OE2015 [Circ. & instr.]</td>
+    <td>14:00-15:15 (Slot-7)</td>
+    <td data-day="Monday" data-slot="7">---</td>
+    <td data-day="Tuesday" data-slot="7">OE2013 [Ship Drawing]</td>
+    <td data-day="Wednesday" data-slot="7">---</td>
+    <td data-day="Thursday" data-slot="7">---</td>
+    <td data-day="Friday" data-slot="7">---</td>
 </tr>
 <tr>
-    <td>14:00-16:45</td>
-    <td>NO CLASS</td>
-    <td>OE2013 [Ship Drawing]</td>
-    <td>NO CLASS</td>
-    <td>NO CLASS</td>
-    <td>NO CLASS</td>
+    <td>15:30-16:45 (Slot-8)</td>
+    <td data-day="Monday" data-slot="8">---</td>
+    <td data-day="Tuesday" data-slot="8">OE2013 [Ship Drawing]</td>
+    <td data-day="Wednesday" data-slot="8">---</td>
+    <td data-day="Thursday" data-slot="8">---</td>
+    <td data-day="Friday" data-slot="8">---</td>
 </tr>
 <tr>
-    <td>17:00-17:50</td>
-    <td>NO CLASS</td>
-    <td>      NO CLASS         </td>
-    <td>      NO CLASS         </td>
-    <td>NO CLASS</td>
-    <td>NO CLASS</td>
+    <td>17:00-17:50 (Slot-9)</td>
+    <td data-day="Monday" data-slot="9">---</td>
+    <td data-day="Tuesday" data-slot="9">      ---         </td>
+    <td data-day="Wednesday" data-slot="9">      ---         </td>
+    <td data-day="Thursday" data-slot="9">---</td>
+    <td data-day="Friday" data-slot="9">---</td>
 </tr>
 </table>
+
+<div id="upcoming-changes"></div>
+
+<h3>CR Update Panel</h3>
+<form id="update-form">
+    <input type="date" id="date-input"   required>
+    <input type="text" id="slot-input" placeholder="Slot Number"   required>
+    <input type="text" id="status-input" placeholder="Status (eg:CANCELLED)" required>
+    <input type="password" id="password-input" placeholder="CR Password" required>
+    <button type="submit">Submit Update</button>
+</form>
+<p id="form-message"></p>
+
 <script>
     let today=new Date();
     let dayNumber=today.getDay();
@@ -128,6 +160,95 @@
             }
         });
     }
+
+    function getTodayDateString() {
+        const d = new Date();
+        const year = d.getFullYear();
+        const month = String(d.getMonth() + 1).padStart(2, '0');
+        const day = String(d.getDate()).padStart(2, '0');
+        return `${year}-${month}-${day}`;
+    }
+
+function loadOverrides() {fetch('https://navarch-backend.onrender.com/overrides')
+.then(response => response.json())
+.then(data => {
+    const todayStr = getTodayDateString();
+    let today = new Date();
+    let dayNumber = today.getDay();
+
+    if (dayNumber >= 1 && dayNumber <= 5) {
+      for (const key in data) {
+        const [date, slot] = key.split('_');
+
+        if (date === todayStr) {
+          let rows = document.querySelectorAll("table tr");
+          rows.forEach(function(row) {
+            let cell = row.children[dayNumber];
+            if (cell && cell.dataset.slot === slot) {
+              cell.textContent = data[key];
+              cell.style.backgroundColor = "tomato";
+            }
+          });
+        }
+      }
+    }
+  });
+}
+
+  function loadUpcoming() {fetch('https://navarch-backend.onrender.com/upcoming')
+  .then(response => response.json())
+  .then(upcoming => {
+    const container = document.getElementById('upcoming-changes');
+
+    if (upcoming.length===0) {
+        container.textContent="NO UPCOMING CHANGES IN SCHEDULE";
+        return;
+    }
+    let html="<h3>📢 Upcoming Changes</h3><ul>";
+        upcoming.forEach(item => {
+            html += `<li>${item.date} (Slot ${item.slot}): ${item.status}</li>`;
+        })
+        html+= "</ul>";
+    container.innerHTML = html;
+  });
+}
+
+  loadOverrides();
+  loadUpcoming();
+
+  document.getElementById("update-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    const date=document.getElementById('date-input').value;
+    const slot=document.getElementById('slot-input').value;
+    const status=document.getElementById('status-input').value;
+    const password=document.getElementById('password-input').value;
+
+    fetch('https://navarch-backend.onrender.com/update', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({date,slot,status,password})
+    })
+    .then(response => response.json().then(data => ({status: response.status, body:data})))
+    .then(result => {
+        const message= document.getElementById('form-message');
+        if (result.status === 403) {
+            message.textContent = "❌ " + result.body.error;
+            message.style.color = "red";
+        } else {
+            message.textContent = "✅ Update submitted successfully!";
+            message.style.color = "green";
+
+            loadOverrides();
+            loadUpcoming();
+
+            document.getElementById('update-form').reset();
+        }
+        setTimeout( () => {
+            message.textContent = "";
+        }, 3000);
+    });
+  });
+
 </script>
 </body>
 </html>
